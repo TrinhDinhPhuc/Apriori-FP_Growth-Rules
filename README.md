@@ -1,24 +1,25 @@
 # Apriori-FP_Growth-Rules
-Mining a supermarket dataset with FP-Growth Rule
+# Mining a supermarket dataset with FP-Growth Rule
 
-Stage 1: Open supermarket.arff file
+## Stage 1: Open supermarket.arff file
 What is .arff file?
 •	Arff (Attribute-Relation File Format) file is an ASCII text file that describes a list of instances sharing a set of attributes
 •	ARFF files have two distinct sections. The first section is the Header information, which is followed the Data information.
  
 An example header on the standard IRIS dataset looks like this:
- 
-Here are instances of file on Weka
+[Here are instances of file on Weka]( https://github.com/TrinhDinhPhuc/Apriori-FP_Growth-Rules/blob/master/1.png)
 
-Stage 2: Get rid of Department instances which are not products 
- 
-Department_n are not the noise
-Stage 3:  Choose FP-Growth in Associate tab
- 
+## Stage 2: Get rid of Department instances which are not products 
 
-Stage 4 : Click FP-Growth, there are many customizable options 
- 
-Valid options are:
+![asd](https://github.com/TrinhDinhPhuc/Apriori-FP_Growth-Rules/blob/master/1.png)
+Department_n are not the noise 
+## Stage 3:  Choose FP-Growth in Associate tab
+![asd](https://github.com/TrinhDinhPhuc/Apriori-FP_Growth-Rules/blob/master/2.png)
+
+## Stage 4 : Click FP-Growth, there are many customizable options 
+![asd](https://github.com/TrinhDinhPhuc/Apriori-FP_Growth-Rules/blob/master/3.png)
+### Valid options are:
+
  -P <attribute index of positive value>
   Set the index of the attribute value to consider as 'positive'
   for binary attributes in normal dense instances. Index 2 is always
@@ -50,14 +51,18 @@ Valid options are:
   Use OR instead of AND for must contain list(s). Use in conjunction
   with -transactions and/or –rules
 
-There are many valid options BUT we just concern 3 main FP-Growth’s options
+### There are many valid options BUT we just concern 3 main FP-Growth’s options
 -M <lower bound for minimum support>			I set up = 0.3
 -C <minimum metric score of a rule>  		I set up = 0.6
 S  <Find all rules that meet the lower bound on>   I set up = 30
 (Check it out again in the picture illustration above)
-Stage 5: FP-Growth results 
-Have a look-see:
-1. [fruit=t, milk-cream=t]: 2038 ==> [bread and cake=t]: 1684   <conf:(0.83)> lift:(1.15) lev:(0.05) conv:(1.61) 
+ 
+ ## Stage 5: FP-Growth results 
+![asd](https://github.com/TrinhDinhPhuc/Apriori-FP_Growth-Rules/blob/master/4.png)
+ 
+### Have a look-see:
+
+ 1. [fruit=t, milk-cream=t]: 2038 ==> [bread and cake=t]: 1684   <conf:(0.83)> lift:(1.15) lev:(0.05) conv:(1.61) 
  2. [vegetables=t, milk-cream=t]: 2025 ==> [bread and cake=t]: 1658   <conf:(0.82)> lift:(1.14) lev:(0.04) conv:(1.54) 
  3. [fruit=t, vegetables=t]: 2207 ==> [bread and cake=t]: 1791   <conf:(0.81)> lift:(1.13) lev:(0.04) conv:(1.48) 
  4. [margarine=t]: 2288 ==> [bread and cake=t]: 1831   <conf:(0.8)> lift:(1.11) lev:(0.04) conv:(1.4) 
